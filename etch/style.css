@@ -1,0 +1,11 @@
+.cell {
+    width: 2vw;
+    height: 2vw;
+    border : solid 1px lightblue;
+    box-sizing: border-box;
+    float: left;
+}
+
+.row {
+    max-width: 32vw;
+}
