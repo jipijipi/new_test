@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <form id="form1" onsubmit="getFormvalue()">
+        First name: <input type="text" name="fname" value="David"><br>
+        Last name: <input type="text" name="lname" value="Beckham"><br>
+        <input type="button" value="Submit">
+    </form>
+
+    <p><a id="w3r" type="text/html" hreflang="en-us" rel="nofollow" target="_self"
+            href="https://www.w3resource.com/">w3resource</a></p>
+    <button onclick="getAttributes()">Click here to get attributes value</button>
+
+    <form>
+        <select id="colorSelect">
+            <option>Red</option>
+            <option>Green</option>
+            <option>White</option>
+            <option>Black</option>
+        </select>
+        <input type="button" onclick="removecolor()" value="Select and Remove">
+    </form>
+
+</body>
+<script>
+
+    function getFormvalue() {
+        nodeList = document.body.querySelectorAll('[name]');
+        nodeList.forEach(x => console.log(x.value));
+    }
+
+    document.querySelector('[type=button]').addEventListener('click', getFormvalue);
+
+    function getAttributes() {
+        att = document.querySelector('a').attributes;
+
+        for (let i = 0; i < att.length; i++) {
+            console.log(att[i].nodeName + " : " + att[i].nodeValue);
+        }
+
+
+        console.log(att);
+    }
+
+
+
+</script>
+
+</html>
