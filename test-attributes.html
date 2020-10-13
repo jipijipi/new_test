@@ -29,16 +29,39 @@
         <input type="button" onclick="removecolor()" value="Select and Remove">
     </form>
 
+
+    <form>
+        Select your favorite Color :
+        <select id="mySelect">
+            <option>Red</option>
+            <option>Green</option>
+            <option>Blue</option>
+            <option>White</option>
+        </select>
+        <input type="button" onclick="getOptions()" value="Count and Output all items"></input>
+    </form>
+
+    <p>Input radius value and get the volume of a sphere.</p>
+    <form action="" method="post" id="MyForm">
+        <label for="radius">Radius</label><input type="text" name="radius" id="radius" required>
+        <label for="volume">Volume</label><input type="text" name="volume" id="volume">
+        <input type="button" value="Calculate" id="submit">
+    </form>
+
+    <div id="imgViewer">
+        <button id="jsstyle" onclick="display_random_image();">Show Image</button>
+    </div>
+
 </body>
 <script>
-
+    //ex 1
     function getFormvalue() {
         nodeList = document.body.querySelectorAll('[name]');
         nodeList.forEach(x => console.log(x.value));
     }
 
     document.querySelector('[type=button]').addEventListener('click', getFormvalue);
-
+    //ex 2
     function getAttributes() {
         att = document.querySelector('a').attributes;
 
@@ -49,8 +72,57 @@
 
         console.log(att);
     }
+    //ex 3
+
+    function removecolor() {
+        let selectValue = document.querySelector('#colorSelect');
+        selectValue.remove(selectValue.selectedIndex);
+
+        //let options = document.querySelectorAll('#colorSelect>option');
+        // options.forEach(x => x.value == selectValue ? x.remove() : x);
+
+    }
 
 
+    //ex 4
+
+    function getOptions() {
+        let opt = document.querySelector('#mySelect').options;
+        let result = `There a are ${opt.length} options :\n`;
+
+        for (let option of opt) {
+            result += option.text + '\n';
+        }
+
+        alert(result);
+
+
+    }
+    //ex 5
+
+    document.querySelector('[value=Calculate]').addEventListener('click', calcVolume);
+    function calcVolume() {
+        let radius = document.querySelector('#radius').value;
+        let sphereVolume = (4 / 3) * Math.PI * Math.pow(radius, 3);
+
+        document.querySelector('#volume').value = sphereVolume;
+    }
+
+    //ex 6
+    let images = ["http://farm4.staticflickr.com/3691/11268502654_f28f05966c_m.jpg", "http://farm1.staticflickr.com/33/45336904_1aef569b30_n.jpg", "http://farm6.staticflickr.com/5211/5384592886_80a512e2c9.jpg"];
+
+    function rndInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function display_random_image() {
+        const pick = rndInt(0, images.length - 1);
+        const viewer = document.querySelector('#imgViewer');
+        const mkImg = document.createElement('img');
+        mkImg.src = images[pick];
+        viewer.appendChild(mkImg);
+        console.log(viewer);
+    }
 
 </script>
 
