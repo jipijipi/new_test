@@ -75,5 +75,8 @@ function startInking() {
 }
 
 function inkCell() {
-    this.classList.add('inked');
+    this.style.backgroundColor = 'black';
+    this.style.opacity = +this.style.opacity + 0.1;
+    console.log(this);
+    // this.classList.add('inked');
 }

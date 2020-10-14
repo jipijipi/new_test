@@ -11,7 +11,7 @@
 .cell {
     width: 2vw;
     height: 2vw;
-    border : solid 1px lightblue;
+    /* border : solid 1px lightblue; */
     box-sizing: border-box;
     float: left;
 }
@@ -23,7 +23,8 @@
 }
 
 .inked {
-    background-color: darkslategray;
+    background-color: #000000;
+    opacity: 0;
 }
 
 button{
