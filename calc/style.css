@@ -1,0 +1,44 @@
+body {
+    text-align: center;
+    background-color: dimgrey;
+}
+div {
+    border : 1px solid rgb(231, 231, 231);
+}
+
+#calculator {
+    width: 300px;
+    text-align: center;
+    margin: 10vh auto;
+}
+
+.btn {
+    flex-basis: 60px;
+    height: 40px;
+    margin: 2px;
+    box-sizing: border-box;
+}
+
+#btn-0 {
+    flex-basis: 124px;
+}
+
+#buttons {
+    margin: 10px auto;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#input {
+    width: 80%;
+    height: 50px;
+    text-align: right;
+    font-size: 2rem;
+}
+
+#display {
+    padding: 10px;
+
+}
