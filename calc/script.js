@@ -103,4 +103,6 @@ function addOperation() {
 
 document.querySelector('#btn-result').addEventListener('click', () => operate(operandActive, +primaryValue, +display.value));
 
+//change sign 
 
+document.querySelector('#btn-plusminus').addEventListener('click', () => display.value = -display.value);
