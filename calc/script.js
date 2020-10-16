@@ -106,3 +106,7 @@ document.querySelector('#btn-result').addEventListener('click', () => operate(op
 //change sign 
 
 document.querySelector('#btn-plusminus').addEventListener('click', () => display.value = -display.value);
+
+//percent
+
+document.querySelector('#btn-percent').addEventListener('click', () => display.value = display.value / 100);
