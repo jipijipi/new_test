@@ -14,4 +14,5 @@ function bookMakerTest(...info) {
     this.info = () => `${title} by ${author} has ${pageCount} pages and ${isRead ? "I read it" : "I did not read it"}`;
 }
 
-console.log('inspect teeeest')
+console.log('inspect teeeest');
+document.querySelector('button').addEventListener('click', () => console.log('inspect teeeest buttoun'));
