@@ -1,3 +1,5 @@
+"use strict";
+
 let myLibrary = [];
 
 //book constructor
@@ -19,9 +21,13 @@ function addBook(title, author, pages, hasRead) {
     myLibrary.push(new Book(title, author, pages, hasRead));
 }
 
-addBook('Moby Dick', 'Melville', 2345);
-addBook('Harry Potter', 'JK Rowling', 3212, true);
-
+//initial state
+if (localStorage.length === 0) {
+    addBook('Moby Dick', 'Melville', 2345);
+    addBook('Harry Potter', 'JK Rowling', 3212, true);
+} else {
+    myLibrary = JSON.parse(localStorage.getItem('library'));
+}
 
 function updateLibrary() {
     let library = document.querySelector('#library');
@@ -37,6 +43,9 @@ function updateLibrary() {
         library.append(card);
 
     }
+
+    localStorage.clear();
+    localStorage.setItem('library', JSON.stringify(myLibrary));
 
     //remove buttons
     let removeButtons = document.querySelectorAll('.btnRemove');
@@ -77,5 +86,6 @@ function removeBook() {
 
 function toggleReadBook() {
     let cardIndex = this.parentNode.getAttribute('data-index');
-    myLibrary[cardIndex].toggleRead();
+    myLibrary[cardIndex].hasRead ? myLibrary[cardIndex].hasRead = false : myLibrary[cardIndex].hasRead = true;
+    updateLibrary();
 }
