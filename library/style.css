@@ -5,4 +5,5 @@
     border: solid 1px lightgrey;
     padding: 10px;
     margin: 10px;;
+    min-width: 150px;
 }
