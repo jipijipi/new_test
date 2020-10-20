@@ -1,0 +1,8 @@
+#library {
+    display: flex;
+}
+.book {
+    border: solid 1px lightgrey;
+    padding: 10px;
+    margin: 10px;;
+}
